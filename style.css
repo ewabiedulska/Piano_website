@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+}
+
+.main__wrapper {
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.main__bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    /* background-color: #af9759; */
+}
+
+.main__bg--layer2 {
+    transform: skewX(61deg);
+    transform-origin: right bottom;
+    /* test */
+    /* background-color: darkolivegreen; */
+}
+
+.main__bg img {
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    position: absolute;
+}
+
+.main__bg:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    background-color: #af9759;
+}
+
+.main__bg:first-child:before {
+    z-index: 1;
+}
+
+.main__bg:last-child:before {
+    z-index: 3;
+}
+
+.main__bg--layer2 {
+    z-index: 2;
+}
+
+.main__bg:hover:before {
+    opacity: 0.6;
+}
+
+.main__bg--layer1 img {
+    right: 0;
+}
+
+.main__bg--layer2 img {
+    bottom: 0;
+    transform: skewX(-61deg);
+    transform-origin: inherit;
+}
+
+/* TABLETS */
+@media (max-width: 1200px) and (orientation: portrait){
+    .main__bg--layer2 {
+        transform: skewX(37deg);
+    }
+    .main__bg--layer2 img {
+        transform: skewX(-37deg);
+    }
+}
+
+@media (max-width: 1200px) and (orientation: landscape){
+    .main__bg--layer2 {
+        transform: skewX(53deg);
+    }
+    .main__bg--layer2 img {
+        transform: skewX(-53deg);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) and (orientation: portrait){
+    .main__bg--layer2 {
+        transform: skewX(29deg);
+    }
+    .main__bg--layer2 img {
+        transform: skewX(-29deg);
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape){
+    .main__bg--layer2 {
+        transform: skewX(61deg);
+    }
+    .main__bg--layer2 img {
+        transform: skewX(-61deg);
+    }
+}
